@@ -29,17 +29,4 @@ public class MyBinaryTree<K extends Comparable<K>> {
 		return nodeValue == null ? 0
 				: 1 + this.getSizeRecursively(nodeValue.leftSide) + this.getSizeRecursively(nodeValue.rightSide);
 	}
-
-	public boolean searchRecursively(MyBinaryNode<K> root, int value) {
-		if (root == null)
-			return false;
-		if ((int) root.key == value)
-			return true;
-		if (value < (int) root.key)
-			return searchRecursively(root.leftSide, value);
-
-		else if (value > (int) root.key)
-			return searchRecursively(root.rightSide, value);
-		return false;
-	}
 }
